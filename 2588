@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String fir;
+        String sec;
+        fir = scanner.nextLine();
+        sec = scanner.nextLine();
+
+        char[] firChar = new char[fir.length()];
+        char[] secChar = new char[sec.length()];
+        for(int i = 0; i < fir.length(); i++){
+            firChar[i] = fir.charAt(i);
+        }
+        for(int j = 0; j < sec.length(); j++){
+            secChar[j] = sec.charAt(j);
+        }
+        int[] secNum = new int[sec.length()];
+        for(int k = 0; k < sec.length(); k++){
+            secNum[k] = Character.getNumericValue(secChar[k]);
+        }
+
+        System.out.println(Integer.parseInt(fir) * secNum[2]);
+        System.out.println(Integer.parseInt(fir) * secNum[1]);
+        System.out.println(Integer.parseInt(fir) * secNum[0]);
+        System.out.println(Integer.parseInt(fir) * Integer.parseInt(sec));
+
+        scanner.close();
+    }
+}
