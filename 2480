@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int fir, sec, thi;
+        int big;
+
+        fir = scanner.nextInt();
+        sec = scanner.nextInt();
+        thi = scanner.nextInt();
+
+        if(fir == sec && sec == thi){
+            System.out.println(10000 + fir * 1000);
+        }
+        else if((fir == sec && sec != thi) || (fir == thi && fir != sec)){
+            System.out.println(1000 + fir * 100);
+        }
+        else if(sec == thi && fir != sec){
+            System.out.println(1000 + sec * 100);
+        }
+        else if(fir != sec || fir != thi){
+            big = fir;
+            if(big < sec){
+                big = sec;
+            }
+            if(big < thi){
+                big = thi;
+            }
+            System.out.println(big * 100);
+        }
+
+        scanner.close();
+    }
+}
