@@ -1,0 +1,27 @@
+import java.io.*;
+import java.io.OutputStreamWriter;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        String line;
+
+        while ((line = bufferedReader.readLine()) != null) {
+            String[] input = line.split(" ");
+            int a = Integer.parseInt(input[0]);
+            int b = Integer.parseInt(input[1]);
+            bufferedWriter.write((a + b) + "\n");
+            bufferedWriter.flush();
+        }
+
+        bufferedReader.close();
+
+        bufferedWriter.close();
+    }
+}
