@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int[] arr = new int[10];
+
+        int cnt = 0;
+        int rec = 0;
+
+        for(int i = 0; i < 10; i++){
+            arr[i] = scanner.nextInt();
+            arr[i] = arr[i] % 42;
+        }
+        for(int j = 0; j < 10; j++){
+            for(int k = 0; k < j; k++){
+                if(arr[j] == arr[k]){
+                    cnt++;
+                }
+            }
+            if(cnt == 0){
+                rec++;
+            }
+            cnt = 0;
+        }
+        System.out.print(rec);
+
+        scanner.close();
+
+    }
+}
