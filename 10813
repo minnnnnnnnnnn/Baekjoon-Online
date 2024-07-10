@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        int n, m;
+        int i, j;
+        n = scanner.nextInt();
+        m = scanner.nextInt();
+
+        int[] arr = new int[n];
+
+        for(int k = 0; k < n; k++){
+            arr[k] = k + 1;
+        }
+
+        for(int l = 0; l < m; l++){
+            i = scanner.nextInt();
+            j = scanner.nextInt();
+            int tmp;
+            tmp = arr[i - 1];
+            arr[i - 1] = arr[j - 1];
+            arr[j - 1] = tmp;
+        }
+        
+        for(int a = 0; a < n; a++){
+            System.out.print(arr[a] + " ");
+        }
+
+
+        scanner.close();
+
+    }
+}
