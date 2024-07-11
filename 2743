@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String s;
+
+        s = scanner.next();
+        System.out.print(s.length());
+
+        scanner.close();
+
+    }
+}
