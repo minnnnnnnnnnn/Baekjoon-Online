@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String s;
+        int t, re;
+        t = scanner.nextInt();
+
+        for(int i = 0; i < t; i++){
+            re = scanner.nextInt();
+            s = scanner.next();
+            char[] c = s.toCharArray();
+            char[] ch = new char[c.length * re];
+            int index = 0;
+            for(int j = 0; j < c.length; j++){
+                for(int k = 0; k < re; k++){
+                    ch[index++] = c[j];
+                }
+            }
+            for(char a : ch){
+                System.out.print(a);
+            }
+            System.out.println();
+        }
+
+        scanner.close();
+
+    }
+}
