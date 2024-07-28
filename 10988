@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String s;
+        s = scanner.nextLine();
+
+        char[] c = s.toCharArray();
+        int[] ch = new int[c.length];
+        boolean a = true;
+        for(int i = 0; i < c.length; i++){
+            if(c[i] == c[c.length - 1 - i]){
+                ch[i] = 1;
+            }
+        }
+        for(int i = 0; i < c.length; i++){
+            if(a == true){
+                if(ch[i] == 1){
+                    a = true;
+                }
+                else {
+                    a = false;
+                }
+            }
+            else if(a == false){
+                break;
+            }
+        }
+        if(a){
+            System.out.print("1");
+        }
+        else{
+            System.out.print("0");
+        }
+
+        scanner.close();
+
+    }
+}
