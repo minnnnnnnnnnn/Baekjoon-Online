@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String s;
+
+        s = scanner.nextLine();
+        char[] c = s.toCharArray();
+        int[] ch = new int[26];
+
+        for(int i = 0; i < 26; i++){
+            ch[i] = 0;
+        }
+        for(int i = 0; i < c.length; i++){
+            if(c[i] >= 'a' && c[i] <= 'z'){
+                ch[c[i] - 'a']++;
+            }
+            else if(c[i] >= 'A' && c[i] <= 'Z'){
+                ch[c[i] - 'A']++;
+            }
+        }
+        int max = 0;
+        char maxChar = '?';
+        boolean a = false;
+        for(int i = 0; i < 26; i++){
+            if(max < ch[i]){
+                max = ch[i];
+                maxChar = (char)(i + 'A');
+                a = false;
+            }
+            else if(max == ch[i] && max > 0){
+                a = true;
+            }
+        }
+        if(a){
+            System.out.print("?");
+        }
+        else{
+            System.out.print(maxChar);
+        }
+
+        scanner.close();
+
+    }
+}
